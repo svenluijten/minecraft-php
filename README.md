@@ -64,7 +64,7 @@ Minecraft::fromUuid($uuid);
 ```
 
 This always returns you the same object (`Sven\Minecraft\Minecraft`). You may use
-the `get()` and `only($property)` on it to get retrieve the data:
+the `get()` and `only($property)` methods on it to retrieve the data:
 
 ```php
 $minecraft = new Minecraft;
