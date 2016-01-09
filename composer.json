@@ -1,9 +1,9 @@
 {
     "name": "sven/minecraft-php",
-    "description": "A fluent wrapper around Minecraft's API.",
+    "description": "A fluent wrapper around Mojang's Minecraft API.",
     "homepage": "https://github.com/svenluijten/minecraft-php",
     "license": "MIT",
-    "keywords": ["minecraft", "mojang", "api"],
+    "keywords": ["minecraft", "mojang", "api", "minecraft php"],
     "authors": [
         {
             "name": "Sven Luijten",
