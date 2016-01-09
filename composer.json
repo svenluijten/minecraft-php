@@ -1,0 +1,25 @@
+{
+    "name": "sven/minecraft-php",
+    "description": "A fluent wrapper around Minecraft's API.",
+    "homepage": "https://github.com/svenluijten/minecraft-php",
+    "license": "MIT",
+    "keywords": ["minecraft", "mojang", "api"],
+    "authors": [
+        {
+            "name": "Sven Luijten",
+            "email": "svenluijten@outlook.com",
+            "homepage": "https://svenluijten.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "illuminate/support": "~5.1",
+        "php" : ">=5.5.9",
+        "nategood/httpful": "0.2.20"
+    },
+    "autoload": {
+        "psr-4": {
+            "Sven\\Minecraft\\": "src"
+        }
+    }
+}
