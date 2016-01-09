@@ -63,6 +63,19 @@ Minecraft::fromName($username);
 Minecraft::fromUuid($uuid);
 ```
 
+This always returns you the same object (`Sven\Minecraft\Minecraft`). You may use
+the `get()` and `only($property)` on it to get retrieve the data:
+
+```php
+$minecraft = new Minecraft;
+$user = $minecraft->fromName('jeb_');
+
+$user->get()->name  // jeb_
+$user->get()->uuid  // 853c80ef3c3749fdaa49938b674adae6
+
+$user->only('name') // jeb_
+$user->only('uuid') // 853c80ef3c3749fdaa49938b674adae6
+```
 
 ## Rate limiting
 
