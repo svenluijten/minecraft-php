@@ -23,7 +23,7 @@ class UserNotFoundException extends RuntimeException
     {
         $this->identifier = $identifier;
 
-        $this->message = "Could not find a user by {$type} {$identifier}";
+        $this->message = "Could not find a user with a {$type} of {$identifier}";
 
         return $this;
     }
