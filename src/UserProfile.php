@@ -23,7 +23,8 @@ class UserProfile
     /**
      * Instantiate the UserProfile.
      *
-     * @param  \Httpful\Response $apiResponse
+     * @param \Httpful\Response $apiResponse
+     *
      * @return void
      */
     public function __construct(Response $apiResponse)

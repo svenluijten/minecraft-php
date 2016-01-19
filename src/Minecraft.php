@@ -9,13 +9,14 @@ class Minecraft extends MojangApiClient
     /**
      * Get the user by username at an (optionally) given time.
      *
-     * @param  string  $username
-     * @param  integer $timestamp
+     * @param string $username
+     * @param int    $timestamp
+     *
      * @return \Sven\Minecraft\Minecraft
      */
     public function fromName($username, $timestamp = null)
     {
-        $url = 'https://api.mojang.com/users/profiles/minecraft/' . $username;
+        $url = 'https://api.mojang.com/users/profiles/minecraft/'.$username;
 
         $this->prepare($username, 'username')->request($url, ['at' => $timestamp]);
 
@@ -25,12 +26,13 @@ class Minecraft extends MojangApiClient
     /**
      * Get the user by the given UUID.
      *
-     * @param  string $uuid
+     * @param string $uuid
+     *
      * @return \Sven\Minecraft\Minecraft
      */
     public function fromUuid($uuid)
     {
-        $url = 'https://sessionserver.mojang.com/session/minecraft/profile/' . $uuid;
+        $url = 'https://sessionserver.mojang.com/session/minecraft/profile/'.$uuid;
 
         $this->prepare($uuid, 'uuid')->request($url);
 
@@ -50,14 +52,16 @@ class Minecraft extends MojangApiClient
     /**
      * Return only the specified property.
      *
-     * @param  string $property
-     * @return string
+     * @param string $property
+     *
      * @throws \Sven\Minecraft\Exceptions\InvalidArgumentException
+     *
+     * @return string
      */
     public function only($property)
     {
-        if ( ! property_exists($this->user, $property)) {
-            throw (new InvalidArgumentException)->setMessage($property, $this->user);
+        if (!property_exists($this->user, $property)) {
+            throw (new InvalidArgumentException())->setMessage($property, $this->user);
         }
 
         return $this->user->{$property};
