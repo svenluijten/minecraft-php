@@ -8,7 +8,7 @@ class TooManyRequestsException extends RuntimeException
 {
     public function __construct($message = null, $code = 0, RuntimeException $previous = null)
     {
-        if ( ! is_null($message)) {
+        if (!is_null($message)) {
             $this->message = $message;
         }
 

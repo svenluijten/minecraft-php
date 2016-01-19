@@ -16,7 +16,8 @@ class UserNotFoundException extends RuntimeException
     /**
      * Set the affected player's UUID or username.
      *
-     * @param  string $identifier
+     * @param string $identifier
+     *
      * @return \RuntimeException
      */
     public function setIdentifier($identifier, $type)
