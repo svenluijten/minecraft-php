@@ -8,10 +8,8 @@ class TooManyRequestsException extends RuntimeException
 {
     public function __construct($message = null, $code = 0, RuntimeException $previous = null)
     {
-        if (!is_null($message)) {
-            $this->message = $message;
-        }
+        $preset = "You're making too many requests to this resource. Consider caching the results.";
 
-        $this->message = "You're making too many requests for this resource. Consider caching the results.";
+        $this->message = is_null($message) ? $preset : $message;
     }
 }

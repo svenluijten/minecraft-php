@@ -70,17 +70,24 @@ the `get()` and `only($property)` methods on it to retrieve the data:
 $minecraft = new Minecraft;
 $user = $minecraft->fromName('jeb_');
 
-$user->get()->name  // jeb_
-$user->get()->uuid  // 853c80ef3c3749fdaa49938b674adae6
+$user->get()->name;  // jeb_
+$user->get()->uuid;  // 853c80ef3c3749fdaa49938b674adae6
 
-$user->only('name') // jeb_
-$user->only('uuid') // 853c80ef3c3749fdaa49938b674adae6
+$user->only('name'); // jeb_
+$user->only('uuid'); // 853c80ef3c3749fdaa49938b674adae6
+```
+
+If you want more flexibility, the `->get()` method now returns a JSON object of
+data for your user:
+
+```php
+$user->get(); // {"name": "jeb_", "uuid": "853c80ef3c3749fdaa49938b674adae6"}
 ```
 
 ## Rate limiting
 
 Mojang has some rate limiting in place so you are expected to cache the
-results. You may send **1** request per minute to the same resource, and
+results. You may send **1 request per minute** to the same resource, and
 you may request as many unique resources as you'd like. Keep in mind
 Mojang might change this at any time.
 

@@ -20,7 +20,7 @@ class UserNotFoundException extends RuntimeException
      *
      * @return \RuntimeException
      */
-    public function setIdentifier($identifier, $type)
+    public function setProperties($identifier, $type)
     {
         $this->identifier = $identifier;
 

@@ -2,7 +2,7 @@
 
 namespace Sven\Minecraft;
 
-use Httpful\Request as Client;
+use Httpful\Request as Http;
 use Sven\Minecraft\Exceptions\TooManyRequestsException;
 use Sven\Minecraft\Exceptions\UserNotFoundException;
 
@@ -16,12 +16,12 @@ class MojangApiClient
     /**
      * @var string
      */
-    protected $identifier;
+    private $identifier;
 
     /**
      * @var string
      */
-    protected $type;
+    private $type;
 
     /**
      * @var \Httpful\Response
@@ -38,11 +38,9 @@ class MojangApiClient
      */
     protected function request($url, array $options = null)
     {
-        if (!is_null($options) && !array_key_exists('at', $options)) {
-            $url .= '?at='.$options['at'];
-        }
+        $url .= !is_null($options) ? '?' . http_build_query($options) : '';
 
-        $this->response = Client::get($url)->expectsJson()->send();
+        $this->response = Http::get($url)->expectsJson()->send();
 
         return $this->createUser();
     }
@@ -97,7 +95,7 @@ class MojangApiClient
     private function assureValidUser()
     {
         if (!$this->response->code == 200 || is_null($this->response->body)) {
-            throw (new UserNotFoundException())->setIdentifier($this->identifier, $this->type);
+            throw (new UserNotFoundException())->setProperties($this->identifier, $this->type);
         }
 
         return $this;

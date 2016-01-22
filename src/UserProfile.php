@@ -35,4 +35,19 @@ class UserProfile
 
         return $this;
     }
+
+    /**
+     * Return a JSON object when the object is treated like a string.
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        $data = [
+            'name' => $this->name,
+            'uuid' => $this->uuid,
+        ];
+
+        return json_encode($data) ?: '';
+    }
 }
