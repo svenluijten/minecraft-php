@@ -77,7 +77,7 @@ $user->only('name'); // jeb_
 $user->only('uuid'); // 853c80ef3c3749fdaa49938b674adae6
 ```
 
-If you want more flexibility, the `->get()` method now returns a JSON object of
+If you want more flexibility, the `->get()` method returns a JSON object of
 data for your user:
 
 ```php
