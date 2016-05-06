@@ -38,7 +38,7 @@ class MojangApiClient
      */
     protected function request($url, array $options = null)
     {
-        $url .= !is_null($options) ? '?' . http_build_query($options) : '';
+        $url .= !is_null($options) ? '?'.http_build_query($options) : '';
 
         $this->response = Http::get($url)->expectsJson()->send();
 
