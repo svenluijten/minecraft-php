@@ -97,7 +97,7 @@ This is simply a wrapper around [Mojang](https://mojang.com)'s API, beautifully
 
 ## License
 
-`sven/minecraft-php` is licenced under the MIT License (MIT). Please see the
+`sven/minecraft-php` is licensed under the MIT License (MIT). Please see the
 [license file](LICENSE.md) for more information.
 
 [ico-version]: https://img.shields.io/packagist/v/sven/minecraft-php.svg?style=flat-square
