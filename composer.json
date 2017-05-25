@@ -1,13 +1,12 @@
 {
     "name": "sven/minecraft-php",
     "description": "A fluent wrapper around Mojang's Minecraft API.",
-    "homepage": "https://github.com/svenluijten/minecraft-php",
     "license": "MIT",
     "keywords": ["minecraft", "mojang", "api", "minecraft"],
     "authors": [
         {
             "name": "Sven Luijten",
-            "email": "svenluijten@outlook.com",
+            "email": "svenluijten1995@gmail.com",
             "homepage": "https://svenluijten.com"
         }
     ],
