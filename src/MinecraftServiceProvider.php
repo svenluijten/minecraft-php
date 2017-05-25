@@ -13,7 +13,7 @@ class MinecraftServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app['minecraft'] = $this->app->share(function ($app) {
+        $this->app->singleton('minecraft', function () {
             return new Minecraft();
         });
     }
